@@ -1,9 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import AcceptNftOffer from "@/components/AcceptNftOffer" // 👈 Import du composant JS
 
 export default function Page() {
-  const [address, setAddress] = useState("")
+  const [address, setAddress] = useState("rPaCLUhWq2vEwBKRtYFRCydbJNNEBAm35n")
   const [tab, setTab] = useState("wallet")
   const [walletInfo, setWalletInfo] = useState(null)
   const [nfts, setNfts] = useState([])
@@ -61,7 +60,6 @@ export default function Page() {
           </button>
         </div>
 
-        {/* Tabs */}
         <div className="flex justify-center gap-4 mt-4">
           <button
             onClick={() => setTab("wallet")}
@@ -74,12 +72,6 @@ export default function Page() {
             className={`px-4 py-2 rounded ${tab === "nfts" ? "bg-[#2A2A40]" : "bg-[#1A1A22]"}`}
           >
             Owned NFTs
-          </button>
-          <button
-            onClick={() => setTab("offers")}
-            className={`px-4 py-2 rounded ${tab === "offers" ? "bg-[#2A2A40]" : "bg-[#1A1A22]"}`}
-          >
-            Accept Offers
           </button>
         </div>
 
@@ -114,11 +106,6 @@ export default function Page() {
               <p className="text-center text-gray-400 col-span-full">Aucun NFT trouvé</p>
             )}
           </div>
-        )}
-
-        {/* Accept Offers Tab */}
-        {tab === "offers" && (
-          <AcceptNftOffer />
         )}
       </div>
     </div>
